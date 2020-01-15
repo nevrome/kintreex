@@ -53,10 +53,21 @@ pm_long_fixed <- pm_long %>%
     value
   )
 
-relationship_facts <- sapply(
+relationship_facts <- lapply(
   1:nrow(pm_long_fixed), function (i) {
-    paste0(pm_long_fixed$value_cut[i], "(", pm_long_fixed$id.a[i], ", ", pm_long_fixed$id.b[i], ").")
-})
+    c(
+      paste0(
+        pm_long_fixed$value_cut[i], "(", 
+          pm_long_fixed$id.a[i], ", ", pm_long_fixed$id.b[i], 
+        ")."
+      ), 
+      paste0(
+        pm_long_fixed$value_cut[i], "(", 
+          pm_long_fixed$id.b[i], ", ", pm_long_fixed$id.a[i], 
+        ")."
+      )
+    )
+}) %>% unlist()
 
 #### write facts to file ####
 
