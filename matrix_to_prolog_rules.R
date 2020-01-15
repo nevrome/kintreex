@@ -79,5 +79,5 @@ writeLines(
     "",
     relationship_facts
   ),
-  con = "facts_template.pl.template"
+  con = "facts.pl"
 )

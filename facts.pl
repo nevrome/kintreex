@@ -145,3 +145,4 @@ first_degree(margarettheresa, mariana).
 first_degree(mariana, margarettheresa).
 first_degree(margarettheresa, charlesii).
 first_degree(charlesii, margarettheresa).
+
