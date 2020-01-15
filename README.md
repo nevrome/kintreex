@@ -1,5 +1,7 @@
 # kintreex
 
+Data source: https://en.wikipedia.org/wiki/Template:War_of_the_Spanish_Succession_family_tree
+
 start prolog interpreter
 
 ```
