@@ -15,6 +15,9 @@ father_of(X, anne).
 mother_of(X, anne).
 ```
 
+only distinct solutions: `distinct(sister_of(X,philipiv)).`
+show all solutions: `findall(X,distinct(sister_of(X,philipiv)),L).`
+
 quit
 
 ```

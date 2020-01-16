@@ -1,0 +1,14 @@
+Y = You
+P = Parent
+M = Mother
+F = Father
+B = Brother
+S = Sister
+Sib = Sibling
+G = Grandparent
+Gf = Grandfather
+Gm = Grandmother
+U = Uncle
+A = Aunt
+
+
