@@ -52,6 +52,7 @@ third_degree(margarettheresa, louisxiv).
 second_degree(anne, mariana).
 second_degree(anne, mariatheresa).
 second_degree(anne, leopoldi).
+second_degree(charlesii, mariatheresa).
 second_degree(leopoldi, philipiii).
 second_degree(leopoldi, margaret).
 second_degree(leopoldi, anne).
@@ -64,6 +65,7 @@ second_degree(margaret, mariana).
 second_degree(margaret, louisxiv).
 second_degree(margaret, mariatheresa).
 second_degree(margaret, leopoldi).
+second_degree(margarettheresa, mariatheresa).
 second_degree(mariaanna, louisxiv).
 second_degree(mariaanna, mariatheresa).
 second_degree(mariana, philipiii).
@@ -74,6 +76,8 @@ second_degree(mariatheresa, philipiii).
 second_degree(mariatheresa, margaret).
 second_degree(mariatheresa, mariaanna).
 second_degree(mariatheresa, anne).
+second_degree(mariatheresa, charlesii).
+second_degree(mariatheresa, margarettheresa).
 second_degree(philipiii, mariana).
 second_degree(philipiii, louisxiv).
 second_degree(philipiii, mariatheresa).
@@ -81,10 +85,6 @@ second_degree(philipiii, leopoldi).
 second_degree(philipiv, mariana).
 second_degree(philipiv, louisxiv).
 second_degree(philipiv, leopoldi).
-second_degree(charlesii, mariatheresa).
-second_degree(margarettheresa, mariatheresa).
-second_degree(mariatheresa, charlesii).
-second_degree(mariatheresa, margarettheresa).
 second_degree(charlesii, philipiii).
 second_degree(charlesii, margaret).
 second_degree(charlesii, leopoldi).
