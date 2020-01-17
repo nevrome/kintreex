@@ -85,3 +85,16 @@ aunt_of(A, Y):-
     parent_of(P,Y), sibling_of(P,A),
     grandparent_of(G,Y), parent_of(G,A).
 
+% nephews and nieces
+nephew_of(Ne, Y):- 
+    male(Ne), 
+    second_degree(Ne,Y),
+    parent_of(P,Ne), sibling_of(P,Y).
+
+niece_of(Ni, Y):- 
+    female(Ni), 
+    second_degree(Ni,Y),
+    parent_of(P,Ni), sibling_of(P,Y).
+
+
+

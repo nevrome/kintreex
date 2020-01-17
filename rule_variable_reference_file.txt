@@ -13,5 +13,6 @@ Gf = Grandfather
 Gm = Grandmother
 U = Uncle
 A = Aunt
-
+Ne = Nephew
+Ni = Niece
 
