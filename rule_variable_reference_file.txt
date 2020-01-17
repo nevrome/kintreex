@@ -15,4 +15,7 @@ U = Uncle
 A = Aunt
 Ne = Nephew
 Ni = Niece
+Hb = Halfbrother
+Hs = Halfsister
+Hsib = Halfsibling
 

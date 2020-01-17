@@ -47,12 +47,12 @@ daughter_of(Y,P):- female(Y), child_of(Y,P).
 brother_of(B,Y):- 
     male(B), 
     first_degree(B,Y),
-    parent_of(P,B), parent_of(P,Y), B \= Y, P \= B.
+    parents_of(F,M,B), parents_of(F,M,Y), F \= B.
 
 sister_of(S,Y):- 
     female(S), 
     first_degree(S,Y),
-    parent_of(P,S), parent_of(P,Y), S \= Y, P \= S.
+    parents_of(F,M,S), parents_of(F,M,Y), M \= S.
 
 sibling_of(Sib,Y):- brother_of(Sib, Y).
 sibling_of(Sib,Y):- sister_of(Sib, Y).
@@ -95,6 +95,20 @@ niece_of(Ni, Y):-
     female(Ni), 
     second_degree(Ni,Y),
     parent_of(P,Ni), sibling_of(P,Y).
+
+% half siblings
+halfbrother_of(Hb,Y):- 
+    male(Hb), 
+    second_degree(Hb,Y),
+    parent_of(P,Hb), parent_of(P,Y).
+
+halfsister_of(Hs,Y):- 
+    female(Hs), 
+    second_degree(Hs,Y),
+    parent_of(P,Hs), parent_of(P,Y).
+
+halfsibling_of(Hsib,Y):- halfbrother_of(Hsib, Y).
+halfsibling_of(Hsib,Y):- halfsister_of(Hsib, Y).
 
 
 
