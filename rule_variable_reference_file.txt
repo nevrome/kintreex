@@ -1,7 +1,10 @@
 Y = You
 P = Parent
-M = Mother
 F = Father
+C = Child
+So = Son
+Da = Daughter
+M = Mother
 B = Brother
 S = Sister
 Sib = Sibling
