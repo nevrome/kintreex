@@ -61,16 +61,22 @@ sibling_of(Sib,Y):- sister_of(Sib, Y).
 grandfather_of(Gf,Y):- 
     male(Gf),
     second_degree(Gf,Y),
-    father_of(Gf,P), parent_of(P,Y), Gf \= P.
+    father_of(Gf,P), parent_of(P,Y).
 grandmother_of(Gm,Y):- 
     female(Gm),
     second_degree(Gm,Y),
-    mother_of(Gm,P), parent_of(P,Y), Gm \= P.
+    mother_of(Gm,P), parent_of(P,Y).
 
-grandparent_of(X,Y):- grandfather_of(X,Y).
-grandparent_of(X,Y):- grandmother_of(X,Y).
+grandparent_of(G,Y):- grandfather_of(G,Y).
+grandparent_of(G,Y):- grandmother_of(G,Y).
 
-grandparents_of(X,Y,Z):- grandmother_of(X,Z), grandfather_of(Y,Z).
+grandparents_of(Gf,Gm,Z):- grandfather_of(Gf,Z), grandmother_of(Gm,Z).
+
+% grandchildren
+grandchild_of(Y,G):- grandparent_of(G,Y).
+grandchild_of(Y,Gf,Gm):- grandparents_of(Gf,Gm,Y).
+grandson_of(Y,G):- male(Y), grandchild_of(Y,G).
+granddaughter_of(Y,G):- female(Y), grandchild_of(Y,G).
 
 % uncles and aunts
 uncle_of(U, Y):- 
@@ -109,6 +115,4 @@ halfsister_of(Hs,Y):-
 
 halfsibling_of(Hsib,Y):- halfbrother_of(Hsib, Y).
 halfsibling_of(Hsib,Y):- halfsister_of(Hsib, Y).
-
-
 
