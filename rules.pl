@@ -1,6 +1,6 @@
 /* Rules */
 
-all_relations(F,M,B,S,So,Da,Gf,Gm,U,A,Y):-
+all_relations(F,M,B,S,So,Da,Gf,Gm,U,A,Ne,Ni,Hb,Hs,Gso,Gda,Y):-
     %% first degree %%
     % male
     (father_of(F,Y), F \== B, F \== So;
@@ -14,18 +14,18 @@ all_relations(F,M,B,S,So,Da,Gf,Gm,U,A,Y):-
      false),
     %% second degree %%
     % male
-    (grandfather_of(Gf,Y), Gf \== U;
-     uncle_of(U,Y), U \== Gf;
-     % nephew
-     % halfbrother
-     % grandson
+    (grandfather_of(Gf,Y), Gf \== U, Gf \== Ne, Gf \== Hb, Gf \== Gso;
+     uncle_of(U,Y), U \== Gf, U \== Ne, U \== Hb, U \== Gso;
+     nephew_of(Ne,Y), Ne \== Gf, Ne \== U, Ne \== Hb, Ne \== Gso;
+     halfbrother_of(Hb,Y), Hb \== Gf, Hb \== U, Hb \== Ne, Hb \== Gso;
+     grandson_of(Gso,Y), Gso \== Gf, Gso \== U, Gso\== Ne, Gso \== Hb;
      false),
     % female
-    (grandmother_of(Gm,Y), Gm \== A;
-     aunt_of(U,Y), A \== Gm;
-     % niece
-     % halfsister
-     % granddaughter
+    (grandmother_of(Gm,Y), Gm \== A, Gm \== Ni, Gm \== Hs, Gm \== Gda;
+     aunt_of(A,Y), A \== Gm, A \== Ni, A \== Hs, A \== Gda;
+     niece_of(Ni,Y), Ni \== Gm, Ni \== A, Ni \== Hs, Ni \== Gda;
+     halfsister_of(Hs,Y), Hs \== Gm, Hs \== A, Hs \== Ni, Hs \== Gda;
+     granddaughter_of(Gda,Y), Gda \== Gm, Gda \== A, Gda\== Ni, Gda \== Hs;
      false).
 
 % parents
