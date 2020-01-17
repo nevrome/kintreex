@@ -1,4 +1,4 @@
-:- include('rules.pl').
+:- include('../rules.pl').
 
 /* parents */
 male(dad).
