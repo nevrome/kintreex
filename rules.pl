@@ -1,14 +1,32 @@
 /* Rules */
 
-all_relations(F,M,B,S,So,Da,Y):-
-   (father_of(F,Y), F \== B, F \== Da;
-    brother_of(B,Y), B \== F, B \== Da;
-    son_of(So,Y), So \== F, So \== B;
-    false),
-   (mother_of(M,Y), M \== B, M \== Da;
-    sister_of(S,Y), S \== F, S \== Da;
-    daughter_of(Da,Y), Da \== M, Da \== S;
-    false).
+all_relations(F,M,B,S,So,Da,Gf,Gm,U,A,Y):-
+    %% first degree %%
+    % male
+    (father_of(F,Y), F \== B, F \== So;
+     brother_of(B,Y), B \== F, B \== So;
+     son_of(So,Y), So \== F, So \== B;
+     false),
+    % female
+    (mother_of(M,Y), M \== B, M \== Da;
+     sister_of(S,Y), S \== F, S \== Da;
+     daughter_of(Da,Y), Da \== M, Da \== S;
+     false),
+    %% second degree %%
+    % male
+    (grandfather_of(Gf,Y), Gf \== U;
+     uncle_of(U,Y), U \== Gf;
+     % nephew
+     % halfbrother
+     % grandson
+     false),
+    % female
+    (grandmother_of(Gm,Y), Gm \== A;
+     aunt_of(U,Y), A \== Gm;
+     % niece
+     % halfsister
+     % granddaughter
+     false).
 
 % parents
 father_of(F,Y):- male(F), first_degree(F,Y).
@@ -66,5 +84,4 @@ aunt_of(A, Y):-
     second_degree(A, Y), 
     parent_of(P,Y), sibling_of(P,A),
     grandparent_of(G,Y), parent_of(G,A).
-
 
